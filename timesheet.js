@@ -1,38 +1,81 @@
 
 //firebase link
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAzw9ekJnNkRyyVxxsb1Ee3bZR183NkSR8",
+    authDomain: "timesheet-2eb05.firebaseapp.com",
+    databaseURL: "https://timesheet-2eb05.firebaseio.com",
+    projectId: "timesheet-2eb05",
+    storageBucket: "",
+    messagingSenderId: "721156852367"
+  };
+  firebase.initializeApp(config);
 
- 
-//1. Create a var for employee name, role, start date, months worked, monthly rate, total billed
-
-var employeeName
-
-var role
-
-var startDate
-
-var monthsWorked
-
-var monthlyRate
-
-var totalBilled
+  // var employeeName="";
+  // var employeeRole="";
+  // var employeeRate ="";
+  // var employeeStart="";
+var database = firebase.database();
 
 //create an event listner, on click function
 
-$("#nameofdivforaddemployeediv").on("click", function(){
+$("#submit-bid").on("click", function(event){
+    event.preventDefault();
 //add in our value for our vars into their designated div
-		employeename=$("#divforname").val().trim();
+		var employeeName=$("#divemployeeName").val();
+		console.log(employeeName);
 
-		role =$("#divforrole").val().trim();
+		var employeeRole =$("#divemployeeRole").val();
 
-		startDate=$("#divforstartdate").val().trim();
+		var employeeRate=$("#divemployeeRate").val();
 
-		monthsWorked=$("#divformonthsworked").val().trim();
+		var employeeStart=$("#divemployeeStart").val();
 
+database.ref().push({
+    name: employeeName,
+    role: employeeRole,
+    start: employeeStart,
+    rate: employeeRate,
+    dataAdded: firebase.database.ServerValue.TIMESTAMP
+ 
+	// $("#employeeNameInput").val("");
+ //    $("#roleInput").val("");
+ //    $("#startInput").val("");
+ //    $("#rateInput").val("");
+
+ //    return false;
+
+   });
+
+// console.log(employeeName);
+//  console.log(name);
+//  console.log(employeeRole);
+//  console.log(role);
+//  console.log(employeeStart);
+//  console.log(start);
+//  console.log(employeeRate);
+//  console.log(rate);
+});
+
+
+		// var employeeInfo = {
+  //     name: employeeName,
+  //     role: employeeRole,
+  //     start: employeeStart,
+  //     rate: employeeRate}
+  //   });
+//saveto firebase key + value, will show up in data in firebase
 	
 
-  });
 
-});
+
+
+//event with firebase child snapshot
+
+
+
+
+
 
 
 //take the user input and and convert it to a string
