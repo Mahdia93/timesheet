@@ -13,7 +13,8 @@
     <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <!--momentJS -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
 
@@ -44,8 +45,29 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="row">
-                <div class="col-sm-2">
-                  
+                <div class="col-sm-12">
+                  <table class="table" id="myTable">
+          <thead>
+            <tr>
+              <th>Employee Name</th>
+              <th>Role</th>
+              <th>Start Date</th>
+              <th>Months Worked</th>
+              <th>Monthly Rate</th>
+              <th>Total Billed ($)</th>
+              </tr>
+            </thead>
+          <tbody> 
+            <tr>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+          </tbody>
+        </table>
 
                   
                 </div>
@@ -74,7 +96,7 @@
                 </div>
                 <div class="form-group">
                   <label for="divemployeeStart">State Date (DD/MM/YY - ex: 01/01/17)</label>
-                  <input class="form-control" id="divemployeeStart" type="number">
+                  <input class="form-control" id="divemployeeStart" type="text">
                 </div>
                 <div class="form-group">
                   <label for="divemployeeRate">Rate</label>
